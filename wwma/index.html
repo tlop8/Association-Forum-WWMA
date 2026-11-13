@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#342018">
+  <meta name="description" content="Explore frontier health and safety with the fictional Wild West Medical Association.">
+  <title>Frontier Field Office · Wild West Medical Association</title>
+  <link rel="icon" href="assets/badge.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 10h4l10-5v14l-10-5H4a2 2 0 0 1-2-2v0a2 2 0 0 1 2-2Zm4 0v4l2 6H7l-2-6m15-5 2-1m-2 5h2m-2 3 2 1"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h17M8 15v-3m5 3V8m5 7V5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-return" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 8M4 10V4m0 6h6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2M16 4a3 3 0 0 1 0 6m1 3a5 5 0 0 1 4 5v2"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 4H6a2 2 0 0 0-2 2v10"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 2.7 6.9 7.3.5-5.6 4.7 1.8 7.1-6.2-4-6.2 4 1.8-7.1L2 9.4l7.3-.5Z"/></symbol>
+  </svg>
+
+  <div class="layout">
+    <header class="masthead" id="masthead" hidden>
+      <div class="masthead-inner">
+        <a class="brand" href="#home" aria-label="WWMA home">
+          <img src="assets/badge.svg" width="34" height="36" alt="">
+          <span>WWMA</span>
+        </a>
+      </div>
+    </header>
+    <div class="stage">
+      <main id="main" class="content" tabindex="-1">
+        <section id="page-home" class="page" aria-labelledby="welcome-title">
+          <div class="welcome">
+            <div class="welcome-frame" aria-hidden="true"></div>
+            <div class="welcome-copy">
+              <div class="welcome-logo">
+                <img src="assets/badge.svg" width="72" height="77" alt="">
+                <div class="wordmark"><span aria-hidden="true">✦</span><strong>WWMA</strong><span aria-hidden="true">✦</span></div>
+                <p>Wild West Medical Association</p>
+              </div>
+              <h1 id="welcome-title">Find Your Learning Trail</h1>
+              <p>Five questions to find courses that fit ranch life.</p>
+              <a class="button start-button" href="#education">Start the quiz <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </section>
+        <section id="page-education" class="page" aria-labelledby="quiz-title" hidden>
+          <h1 id="quiz-title" class="quiz-title">Find Your Learning Trail</h1>
+          <section class="panel quiz-panel" id="quiz-start" aria-label="Frontier quiz" tabindex="-1">
+            <div id="quiz-progress" class="progress-wrap"></div>
+            <div id="quiz"></div>
+            <p class="review-note">Your answers stay in this tab. Course listings are fictional.</p>
+          </section>
+        </section>
+
+        <section id="page-programs" class="page" aria-labelledby="programs-title" hidden>
+          <div class="section-heading">
+            <a class="back-to-quiz" href="#quiz-start" id="back-to-quiz">← Back to the quiz</a>
+            <h1 id="programs-title">Frontier Programs</h1>
+            <p>Preview sample courses taught by fictional ranchers, clinicians, and veterinarians.</p>
+          </div>
+          <div class="program-heading"><h2>Course catalog</h2><span class="demo-tag">Fictional programs</span></div>
+          <div id="program-list" class="program-list"></div>
+          <p class="review-note">Course content is pending clinical and veterinary review.</p>
+        </section>
+
+        <section id="page-marketing" class="page" aria-labelledby="marketing-title" hidden>
+          <div class="section-heading">
+            <h1 id="marketing-title">Marketing Corral</h1>
+            <p>Draft outreach for the learner quiz or a sample WWMA course.</p>
+          </div>
+          <div class="marketing-grid">
+            <section class="panel control-panel" aria-labelledby="controls-title">
+              <h2 id="controls-title">Build a draft</h2>
+              <form id="draft-form">
+                <label for="draft-format">Format</label>
+                <select id="draft-format"><option value="newsletter">Newsletter blurb</option><option value="email">Promotional email</option><option value="social">Social media caption</option></select>
+                <label for="draft-topic">Campaign</label>
+                <select id="draft-topic"><option value="all">Learner quiz</option></select>
+                <label for="draft-tone">Tone</label>
+                <select id="draft-tone"><option value="western">Playful Western</option><option value="professional">Professional</option></select>
+                <button class="button primary" type="submit">Generate draft <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              </form>
+            </section>
+            <section class="panel editor-panel" aria-labelledby="editor-title">
+              <div class="editor-head"><h2 id="editor-title">Editable draft</h2><span class="demo-tag"><span class="status-dot"></span> Sample copy</span></div>
+              <label class="sr-only" for="draft">Edit generated draft</label>
+              <textarea id="draft" rows="11" spellcheck="true" autocomplete="off"></textarea>
+              <div class="editor-actions">
+                <button class="button primary" id="copy-draft" type="button"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg> Copy draft</button>
+                <button class="button secondary" id="download-draft" type="button"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download .txt</button>
+              </div>
+              <p id="draft-status" class="draft-status" role="status">Demo drafts are for editing and export only.</p>
+            </section>
+          </div>
+        </section>
+
+        <section id="page-research" class="page" aria-labelledby="research-title" hidden>
+          <div class="section-heading">
+            <h1 id="research-title">Research Roundup</h1>
+            <p>Explore fictional learner profiles and see what could make training easier to access.</p>
+          </div>
+          <div class="panel research-filter">
+            <span class="demo-tag">Fictional aggregate data</span>
+            <div><label for="cohort">Demo cohort</label><select id="cohort"><option value="all">All demo cohorts</option><option value="new">Less than 1 year</option><option value="experienced">1 year or more</option></select></div>
+          </div>
+          <div id="metrics" class="metric-grid" aria-live="polite"></div>
+          <div class="research-grid">
+            <section class="panel chart-panel" aria-labelledby="chart-title">
+              <h2 id="chart-title">Reported learning barriers</h2>
+              <p>Learners could select more than one. Choose a barrier to see a program idea.</p>
+              <div id="chart" class="chart"></div>
+            </section>
+            <section id="insight" class="panel insight-panel" aria-label="Programming opportunity" aria-live="polite"></section>
+          </div>
+        </section>
+
+        <section id="page-trail-map" class="page" aria-labelledby="map-title" hidden>
+          <div class="section-heading">
+            <h1 id="map-title">Department Trail Map</h1>
+            <p>Follow how one quiz informs programming and outreach across WWMA.</p>
+          </div>
+          <section class="panel map-panel" aria-labelledby="map-initiative">
+            <div class="initiative"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><div><p class="eyebrow">SHARED INITIATIVE</p><h2 id="map-initiative">Find Your Learning Trail</h2></div></div>
+            <ol class="department-route" id="department-route"></ol>
+            <div id="department-detail" class="department-detail" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <footer class="content-footer"><span>Wild West Medical Association</span><span>Fictional learning demo</span></footer>
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>
