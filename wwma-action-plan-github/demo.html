@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Association Action Plan · WWMA</title>
+  <meta name="theme-color" content="#342218">
+  <link rel="icon" href="assets/badge.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="ceo.css?v=6">
+  <script defer src="demo-data.js?v=2"></script>
+  <script defer src="ceo-data.js?v=4"></script>
+  <script defer src="event-posters.js"></script>
+  <script defer src="dashboard-charts.js?v=5"></script>
+  <script defer src="demo.js?v=6"></script>
+</head>
+<body class="workshop">
+  <a class="skip-link" href="#workshop-main">Skip to content</a>
+  <header class="workshop-header">
+    <div class="workshop-width">
+      <a href="index.html" class="workshop-brand"><img src="assets/badge.svg" width="36" height="38" alt=""> WWMA</a>
+      <span>Wild West Medical Association</span>
+    </div>
+  </header>
+  <main class="workshop-width workshop-main" id="workshop-main" tabindex="-1">
+    <div class="action-hero"><h1>Association Action Plan</h1></div>
+    <nav class="workshop-steps" aria-label="Association action plan">
+      <a href="#quiz" data-step="quiz"><span>1</span><strong>Member Quiz Results</strong></a>
+      <a href="#campaign" data-step="campaign"><span>2</span><strong>Marketing Plan</strong></a>
+      <a href="#dashboard" data-step="dashboard"><span>3</span><strong>CEO Dashboard</strong></a>
+    </nav>
+
+    <section id="view-quiz" class="demo-view" aria-labelledby="quiz-heading">
+      <div class="section-top">
+        <h2 id="quiz-heading">Member Quiz Results</h2>
+        <span class="data-label"><i></i> Fictional survey</span>
+      </div>
+      <div class="action-controls panel">
+        <div><label for="survey-audience">Audience</label><select id="survey-audience"><option value="all">All members</option><option value="Cowgirl">Cowgirls</option><option value="Cowboy">Cowboys</option></select></div>
+        <button id="replay-survey" class="button secondary" type="button">Replay submissions</button>
+        <a href="wwma-learner-responses.csv" class="text-link" download>Download responses ↓</a>
+      </div>
+      <p class="stream-status" id="survey-status" role="status"></p>
+      <div id="survey-kpis" class="metric-grid survey-metrics"></div>
+      <div class="action-grid">
+        <article class="panel action-card"><h3>Topics members selected</h3><p class="muted">Members could select more than one.</p><div id="survey-topics" class="bar-list"></div></article>
+        <article class="panel action-card"><h3>What members need</h3><p class="muted">Reported needs from the same survey cohort.</p><div id="survey-needs" class="bar-list"></div><blockquote id="member-quote"></blockquote></article>
+      </div>
+      <div class="action-next"><a class="button primary" href="#campaign">Open Marketing Plan →</a></div>
+    </section>
+
+    <section id="view-campaign" class="demo-view" aria-labelledby="campaign-heading" hidden>
+      <div class="section-top"><h2 id="campaign-heading">Marketing Plan</h2><span class="data-label"><i></i> Fictional campaigns and sponsors</span></div>
+      <div class="action-grid marketing-overview">
+        <article class="panel action-card"><h3>2026 event calendar</h3><div id="event-priorities"></div></article>
+        <article class="panel action-card"><h3>Sponsor matches</h3><p class="muted">Match what members asked for with a fictional sponsor and a useful event idea.</p><div id="sponsor-matches"></div></article>
+      </div>
+      <div class="section-top campaign-title"><h3>Event campaign</h3></div>
+      <div class="action-grid campaign-grid">
+        <article class="panel action-card">
+          <label for="shared-program">Event</label><select id="shared-program"></select>
+          <p id="campaign-date" class="campaign-date"></p>
+          <p id="campaign-rationale" class="campaign-rationale"></p>
+          <label for="campaign-email">Promotion email draft</label>
+          <textarea id="campaign-email" rows="11" spellcheck="true"></textarea>
+          <div class="workshop-actions"><button class="button secondary" type="button" id="copy-email">Copy email</button><button class="button secondary" type="button" id="save-email">Download email ↓</button></div>
+          <p id="email-status" class="inline-status" role="status"></p>
+        </article>
+        <article class="panel action-card poster-card">
+          <div class="poster-tools"><div><label for="poster-format">Promotional poster</label><select id="poster-format"><option value="portrait">Portrait · 1080 × 1350</option><option value="square">Square · 1080 × 1080</option></select></div><button id="download-poster" class="button primary" type="button" disabled>Download PNG ↓</button></div>
+          <canvas id="event-poster" width="1080" height="1350" role="img" aria-label="Event poster preview"></canvas>
+          <p id="poster-status" class="inline-status" role="status"></p>
+        </article>
+      </div>
+      <div class="action-next"><a class="button primary" href="#dashboard">Open CEO Dashboard →</a></div>
+    </section>
+
+    <section id="view-dashboard" class="demo-view ceo-view" aria-labelledby="dashboard-heading" hidden>
+      <aside class="ceo-sidebar">
+        <a href="index.html" class="ceo-brand"><img src="assets/badge.svg" width="38" height="41" alt=""><span>WWMA<small>Wild West Medical Association</small></span></a>
+        <nav aria-label="CEO dashboard sections" class="ceo-nav">
+          <p>Executive view</p>
+          <a href="#dashboard" data-ceo-section="overview"><span aria-hidden="true">◫</span> Overview</a>
+          <a href="#dashboard/programs" data-ceo-section="programs"><span aria-hidden="true">☷</span> Program performance</a>
+          <a href="#dashboard/engagement" data-ceo-section="engagement"><span aria-hidden="true">◔</span> Engagement</a>
+          <p>Association action plan</p>
+          <a href="#quiz"><span aria-hidden="true">☑</span> Member Quiz Results</a>
+          <a href="#campaign"><span aria-hidden="true">◇</span> Marketing Plan</a>
+        </nav>
+      </aside>
+      <div class="ceo-content">
+        <header class="ceo-header" id="ceo-overview">
+          <div><h2 id="dashboard-heading">CEO Dashboard</h2><p>Association Action Plan</p></div>
+          <span class="data-label live-label"><i></i> Simulated live data</span>
+        </header>
+        <div class="panel ceo-period-bar">
+          <div><strong>Reporting period</strong><small id="ceo-period-caption"></small></div>
+          <div id="period-filter" class="ceo-year-control" role="group" aria-label="Reporting quarter"></div>
+        </div>
+        <section class="panel action-card ceo-drilldown" id="ceo-drilldown" tabindex="-1" aria-labelledby="drill-title" hidden>
+          <div class="section-top"><h3 id="drill-title"></h3><button id="close-drill" class="button secondary" type="button">← Back to overview</button></div>
+          <div id="registrations-focus" hidden>
+            <h4 id="registrations-month-heading">YTD registrations by month</h4>
+            <p class="muted">Each bar shows new bookings for one program. The striped December bar shows projected Annual Meeting bookings through opening day.</p>
+            <div class="registration-trend-controls">
+              <div><label for="registrations-trend-program">Program</label>
+                <select id="registrations-trend-program"><option value="all">All programs</option></select></div>
+              <div id="registrations-session-filter" hidden><label for="registrations-trend-session">Session</label>
+                <select id="registrations-trend-session"></select></div>
+            </div>
+            <div id="registrations-monthly" class="interactive-chart" aria-labelledby="registrations-month-heading"></div>
+          </div>
+          <div id="drill-content"></div>
+          <div id="revenue-focus" hidden>
+            <div class="action-controls ceo-revenue-controls">
+              <div><label for="revenue-primary-year">Reporting year</label><select id="revenue-primary-year"></select></div>
+              <div><label for="revenue-compare-year">Compare with</label><select id="revenue-compare-year"></select></div>
+            </div>
+            <div id="revenue-totals" class="ceo-revenue-totals"></div>
+            <h4 id="revenue-program-heading">Revenue by program</h4>
+            <p class="muted">Compare events by the share of spots booked. Revenue bars show how each paid event performed against its own plan, marked by the vertical line.</p>
+            <div class="ceo-focus-legend"><span><i></i> Booked</span><span><i></i> Unfilled capacity</span></div>
+            <div id="revenue-timeline" class="interactive-chart"></div>
+          </div>
+        </section>
+        <div id="ceo-overview-body">
+        <div class="ceo-overview-grid">
+          <article class="ceo-brief">
+            <div><h3>Executive overview</h3><p id="health-summary"></p></div>
+            <div class="ceo-brief-actions"><button id="replay-dashboard" class="button secondary" type="button">Replay updates</button><p class="stream-status" id="dashboard-status" role="status"></p></div>
+          </article>
+          <div id="dashboard-kpis" class="ceo-kpis"></div>
+        </div>
+        <div id="priority-kpis" class="priority-grid" aria-label="Annual meeting and lab performance"></div>
+        <div class="action-controls panel ceo-controls">
+          <div><label for="format-filter">Program format</label><select id="format-filter"><option value="all">All formats</option><option>Annual meeting</option><option>Hands-on course</option><option>Webinar</option></select></div>
+          <div><label for="program-filter">Program</label><select id="program-filter"></select></div>
+          <button class="button secondary" id="export-metrics" type="button">Export CSV ↓</button>
+          <p id="dashboard-export-status" class="inline-status" role="status"></p>
+        </div>
+        <div class="ceo-primary-grid" id="ceo-programs" tabindex="-1">
+          <article class="panel action-card ledger">
+            <h3>Program performance</h3>
+            <p class="muted">Action flags call out low bookings, missed targets, or capacity pressure by quarter.</p>
+            <p id="dashboard-empty" class="muted" hidden>No programs for the selected filters.</p>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Program performance table">
+              <table><thead><tr><th scope="col">Program</th><th scope="col">Registrations / capacity</th><th scope="col">Actual attendance</th><th scope="col">Net revenue / plan</th><th scope="col">Variance</th><th scope="col">Action and owner</th></tr></thead><tbody id="metrics-table"></tbody></table>
+            </div>
+          </article>
+          <article class="panel action-card ceo-notes"><h3>What stands out</h3><ul id="executive-notes" class="executive-notes"></ul></article>
+        </div>
+        <div class="action-grid ceo-charts" id="ceo-engagement" tabindex="-1">
+          <article class="panel action-card"><h3>Revenue mix</h3><p class="muted">Net registration revenue by format</p><div id="revenue-year" class="ceo-year-control" role="group" aria-label="Revenue mix year"></div><div id="revenue-mix" class="interactive-chart"></div></article>
+          <article class="panel action-card"><h3>Attendance mix</h3><p class="muted">Verified check-ins by format</p><div id="attendance-year" class="ceo-year-control" role="group" aria-label="Attendance mix year"></div><div id="attendance-mix" class="interactive-chart" data-empty="No completed events for this selection. Upcoming events appear in Program performance."></div></article>
+          <article class="panel action-card"><h3>Campaign engagement</h3><p class="muted">Email activity across the selected programs</p><div id="engagement-chart" class="interactive-chart"></div></article>
+        </div>
+        <div class="action-grid ceo-charts ceo-comparisons">
+          <article class="panel action-card"><h3>Revenue against plan</h3><p class="muted">Net revenue in USD. Each vertical marker shows the plan.</p><div id="revenue-chart" class="interactive-chart"></div></article>
+          <article class="panel action-card"><h3>Attendance against plan</h3><p class="muted">Actual check-ins by program. Each vertical marker shows the plan.</p><div id="attendance-chart" class="interactive-chart" data-empty="No completed events for this selection. Upcoming events appear in Program performance."></div></article>
+        </div>
+        <details class="workshop-details dashboard-notes"><summary>About the data</summary>
+          <p>Fictional dashboard as of November 13, 2026. The 500 survey profiles cover Q3 and Q4 2026. Replay adds the last 50 profiles and their linked activity. Historical program totals are simulated separately.</p>
+          <p>Capacity counts all available registration spots, including member and non-member spots. Actual attendance counts check-ins for completed sessions. Net registration revenue counts payments less refunds, including paid registrations for upcoming events. Mix charts use their own year and follow the quarter, format, and program filters. Membership figures count active members at the latest point in the selected quarter and renewals among members due to renew. Research grants use the full 2026 budget.</p>
+        </details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="workshop-width workshop-footer"><span>Wild West Medical Association</span><span>All survey, sponsor, engagement, and financial data are fictional.</span></footer>
+</body>
+</html>
